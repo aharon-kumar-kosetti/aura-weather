@@ -42,9 +42,9 @@ const sources = [
 ];
 
 const series = {
-  Rainfall: { unit: "mm/hr", color: "var(--chart-cyan)", points: [18, 24, 22, 35, 48, 42, 57, 73, 68, 85, 78, 92], icon: CloudRain },
-  Wind: { unit: "km/h", color: "var(--chart-blue)", points: [24, 31, 36, 33, 44, 51, 48, 55, 62, 69, 65, 73], icon: Wind },
-  Lightning: { unit: "strikes", color: "var(--chart-red)", points: [8, 14, 11, 25, 21, 35, 29, 48, 55, 49, 70, 82], icon: Zap },
+  Rainfall: { unit: "mm/hr", color: "var(--chart-navy)", points: [18, 24, 22, 35, 48, 42, 57, 73, 68, 85, 78, 92], icon: CloudRain },
+  Wind: { unit: "km/h", color: "var(--chart-green)", points: [24, 31, 36, 33, 44, 51, 48, 55, 62, 69, 65, 73], icon: Wind },
+  Lightning: { unit: "strikes", color: "var(--chart-saffron)", points: [8, 14, 11, 25, 21, 35, 29, 48, 55, 49, 70, 82], icon: Zap },
 };
 type Metric = keyof typeof series;
 const steps = ["Weather observation", "Storm detected", "Risk calculated", "Region identified", "Alert generated", "User notified"];
