@@ -153,32 +153,34 @@
 }
 :root {
   --radius: .35rem;
-  --background: oklch(.985 .004 255);
-  --foreground: oklch(.205 .028 253);
+  --background: oklch(1 0 0);
+  --foreground: oklch(.25 .018 255);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(.205 .028 253);
-  --primary: oklch(.28 .055 247);
-  --primary-foreground: oklch(.99 0 0);
-  --secondary: oklch(.955 .015 242);
-  --secondary-foreground: oklch(.24 .04 250);
-  --muted: oklch(.965 .012 248);
-  --muted-foreground: oklch(.50 .025 253);
-  --accent: oklch(.925 .033 221);
-  --accent-foreground: oklch(.25 .07 237);
-  --border: oklch(.895 .016 249);
-  --input: oklch(.895 .016 249);
-  --ring: oklch(.66 .12 213);
-  --ink-soft: oklch(.49 .025 250);
-  --saffron: oklch(.65 .145 215);
-  --panel-tint: oklch(.967 .014 248);
-  --navy: oklch(.17 .035 255);
-  --navy-raised: oklch(.22 .041 251);
-  --chart-navy: oklch(.69 .15 214);
-  --chart-green: oklch(.65 .14 253);
-  --chart-saffron: oklch(.63 .19 27);
-  --chart-grid: oklch(.87 .016 253);
+  --card-foreground: oklch(.25 .018 255);
+  --primary: oklch(.34 .106 263);
+  --primary-foreground: oklch(.995 .001 260);
+  --secondary: oklch(.955 .028 62);
+  --secondary-foreground: oklch(.35 .075 58);
+  --muted: oklch(.976 .004 258);
+  --muted-foreground: oklch(.47 .022 255);
+  --accent: oklch(.955 .028 62);
+  --accent-foreground: oklch(.34 .106 263);
+  --border: oklch(.93 .003 270);
+  --input: oklch(.93 .003 270);
+  --ring: oklch(.71 .17 54);
+  --ink-soft: oklch(.47 .022 255);
+  --saffron: oklch(.71 .17 54);
+  --india-green: oklch(.47 .105 153);
+  --panel-tint: oklch(.976 .004 258);
+  --navy: oklch(.34 .106 263);
+  --navy-raised: oklch(.39 .098 263);
+  --chart-navy: oklch(.46 .11 263);
+  --chart-green: oklch(.47 .105 153);
+  --chart-saffron: oklch(.71 .17 54);
+  --chart-grid: oklch(.93 .003 270);
   --chart-surface: oklch(1 0 0);
-  --warning: oklch(.52 .20 27);
+  --warning: oklch(.72 .14 53);
+  --watch: oklch(.79 .13 88);
 }
 html { scroll-behavior: smooth; }
 body { font-family: "DM Sans", sans-serif; }
