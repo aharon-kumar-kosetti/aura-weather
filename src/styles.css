@@ -148,7 +148,7 @@
   --font-sans: "DM Sans", sans-serif;
   --font-display: "Barlow Condensed", sans-serif;
   --color-ink-soft: var(--ink-soft);
-  --color-cyan-accent: var(--saffron);
+  --color-saffron: var(--saffron);
   --color-panel-tint: var(--panel-tint);
 }
 :root {
@@ -307,6 +307,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .alert-facts span { color:var(--ink-soft); font-size:9px; font-weight:800; letter-spacing:1px; }
 .alert-facts strong { font-size:11px; }
 .alert-facts .status-text { display:flex; align-items:center; gap:7px; }
+.alert-facts .status-text .live-dot { background:var(--watch); box-shadow:0 0 9px var(--watch); }
 .footer { background:var(--navy); color:var(--primary-foreground); padding-top:55px; border-top:2px solid var(--saffron); }
 .footer-main { display:grid; grid-template-columns:2.2fr 1fr 1fr 1fr; gap:50px; padding-bottom:50px; }
 .footer-logo { font-family:"Barlow Condensed",sans-serif; font-weight:700; letter-spacing:1.3px; font-size:21px; }
