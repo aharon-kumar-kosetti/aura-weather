@@ -53,14 +53,14 @@ function Chart({ metric, selected, onSelect }: { metric: Metric; selected: numbe
   const data = series[metric];
   const coordinates = data.points.map((value, i) => ({ x: 36 + i * 52, y: 150 - value * 1.18 }));
   const line = coordinates.map((p, i) => `${i === 0 ? "M" : "L"}${p.x} ${p.y}`).join(" ");
-  const area = `${line} L${coordinates[coordinates.length - 1].x} 160 L36 160 Z`;
+  const area = `${line} L${coordinates[coordinates.length - 1]?.x ?? 608} 160 L36 160 Z`;
   return <div className="chart-wrap">
-    <div className="chart-value"><span>{data.points[selected]}</span> <small>{data.unit}</small><em>at +{selected * 5} min</em></div>
+    <div className="chart-value"><span>{data.points[selected] ?? 0}</span> <small>{data.unit}</small><em>at +{selected * 5} min</em></div>
     <svg className="signal-chart" viewBox="0 0 650 185" role="img" aria-label={`${metric} forecast trend; select a point for its value`}>
       <defs><linearGradient id="area-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor={data.color} stopOpacity=".26"/><stop offset="100%" stopColor={data.color} stopOpacity="0"/></linearGradient></defs>
       {[40, 80, 120, 160].map(y => <line key={y} x1="36" y1={y} x2="608" y2={y} stroke="var(--chart-grid)" strokeDasharray="3 6" />)}
       <path d={area} fill="url(#area-fill)" /><path d={line} fill="none" stroke={data.color} strokeWidth="3" strokeLinejoin="round" strokeLinecap="round" />
-      <line x1={coordinates[selected].x} x2={coordinates[selected].x} y1="24" y2="160" stroke={data.color} strokeOpacity=".45" strokeDasharray="3 5" />
+      <line x1={coordinates[selected]?.x ?? 36} x2={coordinates[selected]?.x ?? 36} y1="24" y2="160" stroke={data.color} strokeOpacity=".45" strokeDasharray="3 5" />
       {coordinates.map((p, i) => <g key={i} onClick={() => onSelect(i)} className="chart-point" role="button" tabIndex={0} aria-label={`${i * 5} minutes, ${data.points[i]} ${data.unit}`} onKeyDown={e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); onSelect(i); } }}><circle cx={p.x} cy={p.y} r="14" fill="transparent" /><circle cx={p.x} cy={p.y} r={selected === i ? 6 : 3} fill={selected === i ? "var(--chart-surface)" : data.color} stroke={data.color} strokeWidth={selected === i ? 3 : 0} /></g>)}
     </svg>
     <div className="chart-axis"><span>NOW</span><span>+15 MIN</span><span>+30 MIN</span><span>+45 MIN</span><span>+60 MIN</span></div>
@@ -78,7 +78,8 @@ function Index() {
     const timer = window.setInterval(() => setActiveStage(current => (current + 1) % stages.length), 4200);
     return () => window.clearInterval(timer);
   }, [playing]);
-  const stage = stages[activeStage];
+  const stage = stages[activeStage] ?? stages[0];
+  if (!stage) return null;
   return <div className="site-shell">
     <header className="site-header"><div className="nav-inner">
       <a href="#top" className="brand" aria-label="StormSense home"><span className="brand-mark"><Activity size={19}/></span><span><strong>STORMSENSE</strong><small>WEATHER INTELLIGENCE · INDIA</small></span></a>
